@@ -1,0 +1,81 @@
+{
+  "name": "simple-js-components",
+  "version": "1.10.7",
+  "description": "a front end cross-framework ui library based on web-components",
+  "main": "index.js",
+  "module": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yalejian/simple-js-components.git"
+  },
+  "keywords": [
+    "web-components",
+    "ui",
+    "shadow-dom",
+    "keyboard",
+    "custom-elements",
+    "html5",
+    "css3",
+    "javascript",
+    "button",
+    "icon",
+    "slider",
+    "select",
+    "loading",
+    "switch",
+    "checkbox",
+    "radio",
+    "tab",
+    "layout",
+    "tips",
+    "message",
+    "dialog",
+    "input",
+    "img",
+    "rate",
+    "popover",
+    "color-picker",
+    "color-pane",
+    "form",
+    "pagination",
+    "date-picker",
+    "date-pane",
+    "table",
+    "text",
+    "view",
+    "datalist"
+  ],
+  "author": "yalejian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yalejian/simple-js-components/issues"
+  },
+  "publishConfig": {
+    "registry1": "https://npm.pkg.github.com/@yalejian"
+  },
+  "homepage": "https://github.com/yalejian/simple-js-components#readme",
+  "files": [
+    "index.js",
+    "components",
+    "iconfont",
+    "utils"
+  ],
+  "devDependencies": {
+    "@giscus/vue": "^2.2.8",
+    "vitepress": "^1.0.0-alpha.60",
+    "vitepress-plugin-pagefind": "^0.2.1"
+  },
+  "dependencies": {
+    "simple-js-tools":"^1.0.0-beta.5"
+  }
+}
