@@ -131,12 +131,6 @@ const config = {
                     },
                 ],
             },
-            docs: {
-                sidebar: {
-                    hideable: true,
-                    autoCollapseCategories: false,
-                },
-            },
             footer: {
                 style: 'light',
                 links: [

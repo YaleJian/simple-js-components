@@ -1,0 +1,70 @@
+import CodeBlock from '@theme/CodeBlock';
+import "../../../component/index.js"
+import HTMLElementExtends from "../../../component/tools/HTMLElementExtends.js"
+import HTMLElementExtendsRaw from "!raw-loader!../../../component/tools/HTMLElementExtends.js"
+
+# 基础
+所有组件都继承的功能。
+
+## 内置方法Hooks
+劫持所有原生方法，在执行内置方法前先执行自定义方法。
+
+### 方法要求
+- 设置方法的isCallback属性为true。
+- 返回一个Promise对象。
+
+一个切换禁用属性的例子：
+```javascript
+
+//确定hook的方法
+HTMLElementExtends.hooks("toggleAttribute")
+
+//设置hook方法
+toggleDisabled(callback) {
+    if (callback) callback.isHook = true
+    this.disabled = this.toggleAttribute("disabled", callback)
+}
+
+```
+
+## 同步属性 SyncAttributes
+同步自定义元素属性变更到shadowRoot内部元素。
+
+```javascript
+this.syncChild = true
+```
+
+
+## 禁用属性 Disabled
+
+## 设置禁用属性
+```jsx live
+<div>
+    <s-button disabled>禁用</s-button>
+</div>
+```
+
+## 切换禁用属性 toggleDisabled
+元素默认绑定了toggleDisabled方法，方法需要返回一个Promise对象。
+
+```jsx live
+<div>
+    <button onClick={()=>{
+        document.getElementById("toggleDisabledBtn").toggleDisabled(()=>{
+                return new Promise((resolve, reject)=>{
+                    console.log("toggleDisabled执行了自定义函数");
+                    resolve();
+                })
+            })
+        }}
+    >点击切换禁用属性</button>
+
+    <div>
+        <s-button id={"toggleDisabledBtn"}>s-button按钮</s-button>
+    </div>
+</div>
+```
+
+
+## 源码实现
+<CodeBlock language="jsx">{HTMLElementExtendsRaw}</CodeBlock>
