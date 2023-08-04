@@ -2,40 +2,22 @@ import HTMLElementExtends from "../tools/HTMLElementExtends.js";
 
 HTMLElementExtends.init()
 export default class Button extends HTMLElementExtends.Extends {
-    #btnEl;
+    element;//真实的元素
 
-    static get observedAttributes() {
-        return [
-            "disabled",
-        ];
-    }
 
     constructor() {
         super();
-        const shadowRoot = this.attachShadow({mode: "open"});
-        shadowRoot.innerHTML = `<button
-            class="button" part="button" id="button"
-          >
-          <slot></slot>
-          </button>
-          `;
-        this.#btnEl = shadowRoot.getElementById("button");
+        const shadowRoot = this.attachShadow({mode: "open"})
+        shadowRoot.innerHTML = `<button class="button" customTag="button" id="button">
+                                    <slot></slot>
+                                </button>`;
+        this.element = shadowRoot.getElementById("button");
     }
 
     focus(options) {
-        this.#btnEl.focus(options);
+        this.element.focus(options);
     }
 
-
-    attributeChangedCallback(name, oldValue, newValue) {
-        if (name === "disabled") {
-            this.#btnEl.toggleAttribute("inert", newValue !== null);
-            this.#btnEl.toggleAttribute("disabled", newValue !== null);
-            return;
-        }
-
-        this.#btnEl[name] = newValue;
-    }
 }
 
 if (!customElements.get("s-button")) {

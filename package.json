@@ -76,6 +76,6 @@
     "vitepress-plugin-pagefind": "^0.2.1"
   },
   "dependencies": {
-    "simple-js-tools":"^1.0.0-beta.5"
+    "simple-js-tools":"^1.0.0-beta.7"
   }
 }

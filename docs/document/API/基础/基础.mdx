@@ -1,0 +1,75 @@
+import CodeBlock from '@theme/CodeBlock';
+import "../../../../src/button/index"
+import HTMLElementExtends from "../../../../src/tools/HTMLElementExtends.js"
+import HTMLElementExtendsRaw from "!raw-loader!../../../../src/tools/HTMLElementExtends.js"
+
+# 基础
+所有组件都继承的功能。
+
+## 原生方法Hooks
+劫持所有原生方法，在执行方法前先执行自定义方法。
+
+### 方法要求：
+- 设置方法的isCallback属性为true。
+- 返回一个Promise对象。
+
+### 一个切换禁用属性的例子：
+```javascript
+HTMLElementExtends.hooks("toggleAttribute")
+
+toggleDisabled(callback) {
+        if (callback) callback.isCallback = true
+        this.disabled = this.toggleAttribute("disabled", callback)
+    }
+```
+## 同步自定义元素属性变更到shadowRoot内部元素
+```javascript
+HTMLElementExtends.syncHook(callBack)
+
+syncHook(callback) {
+        if (!callback) {
+            callback = (args, _this) => {
+                const name = args[0], oldValue = args[1], newValue = args[2]
+                return new Promise((resolve, reject) => {
+                    console.log("attributeChangedCallback Hook!!", args, _this)
+                    if (_this.shadowRoot.childNodes.length > 0) {
+                        const el = _this.shadowRoot.childNodes[0]
+                        if (oldValue && newValue) {
+                            el[name] = newValue
+                        } else {
+                            el.toggleAttribute(name)
+                        }
+                        console.log("[HTMLElement syncAttr]", name, oldValue, newValue)
+                    }
+                    resolve()
+                })
+            }
+        }
+        callback.isCallback = true
+        func.hooks("attributeChangedCallback", callback)
+    }
+````
+
+## 切换禁用属性 toggleDisabled
+元素默认绑定了toggleDisabled方法，方法需要返回一个Promise对象。
+
+```jsx live
+<div>
+    <button onClick={()=>{
+        document.getElementById("s-disabled").toggleDisabled(()=>{
+            return new Promise((resolve, reject)=>{
+                console.log("toggleDisabled执行了自定义函数");
+                resolve();
+            })
+        })
+    }}
+    >点击切换禁用属性</button>
+
+    <div>
+        <s-button id={"s-disabled"}>s-button按钮</s-button>
+    </div>
+</div>
+```
+
+## 源码实现
+<CodeBlock language="jsx">{HTMLElementExtendsRaw}</CodeBlock>
