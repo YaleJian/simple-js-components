@@ -1,4 +1,7 @@
-import "../../../component/button/"
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+if (ExecutionEnvironment.canUseDOM) {
+    require('../../../component/button/index.js');
+}
 
 # 按钮
 ```html

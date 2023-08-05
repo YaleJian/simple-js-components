@@ -1,6 +1,9 @@
 import CodeBlock from '@theme/CodeBlock';
-import "../../../component/index.js"
-import HTMLElementExtends from "../../../component/tools/HTMLElementExtends.js"
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+if (ExecutionEnvironment.canUseDOM) {
+    require('../../../component/index.js');
+    require('../../../component/tools/HTMLElementExtends.js');
+}
 import HTMLElementExtendsRaw from "!raw-loader!../../../component/tools/HTMLElementExtends.js"
 
 # 基础
