@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksimple_web_components=self.webpackChunksimple_web_components||[]).push([[541],{7519:e=>{e.exports=JSON.parse('{"label":"Javascript","permalink":"/simple-web-components/blog/tags/javascript","allTagsPath":"/simple-web-components/blog/tags","count":1}')}}]);

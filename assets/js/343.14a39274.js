@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksimple_web_components=self.webpackChunksimple_web_components||[]).push([[343],{3343:(e,s,p)=>{p.r(s)}}]);

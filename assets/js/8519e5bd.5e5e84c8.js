@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunksimple_web_components=self.webpackChunksimple_web_components||[]).push([[50],{3726:e=>{e.exports=JSON.parse('{"permalink":"/simple-web-components/blog/tags/npm","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}')}}]);
