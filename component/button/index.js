@@ -1,7 +1,7 @@
-import HTMLElementExtends from "../tools/HTMLElementExtends.js";
+import element from "../tools/element.js";
+import Base from "../Base";
 
-HTMLElementExtends.init()
-export default class Button extends HTMLElementExtends.Extends {
+export default class Button extends Base {
     element;//真实的元素
 
 
@@ -13,9 +13,21 @@ export default class Button extends HTMLElementExtends.Extends {
                                 </button>`;
         this.element = shadowRoot.getElementById("button");
 
-
     }
+
+    static get observedAttributes() {
+        return [
+            "disabled",
+            "size",
+        ];
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+    }
+
 }
+
+element.init(Button)
 
 if (!customElements.get("s-button")) {
     customElements.define("s-button", Button);
