@@ -138,8 +138,8 @@ const config = {
                         title: '快捷链接',
                         items: [
                             {
-                                label: 'API参考',
-                                to: '/docs/API/intro',
+                                label: '快速上手',
+                                to: '/docs/API/快速上手',
                             },
                         ],
                     },
