@@ -12,7 +12,7 @@ let configList = []
 let formats = ['iife', 'es', 'cjs', 'umd']
 let config = (format, filePrefix) => {
     return {
-        input: './components/index.js',
+        input: './components/button.js',
         output: {
             file: `${filePrefix}simple-web-components${format === 'iife' ? '' : `.${format}`}.js`,
             format: format,

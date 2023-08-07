@@ -1,4 +1,3 @@
-import element from "../tools/element.js";
 import Base from "../Base";
 
 export default class Button extends Base {
@@ -25,10 +24,4 @@ export default class Button extends Base {
     attributeChangedCallback(name, oldValue, newValue) {
     }
 
-}
-
-element.init(Button)
-
-if (!customElements.get("s-button")) {
-    customElements.define("s-button", Button);
 }

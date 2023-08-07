@@ -1,12 +1,11 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
 import CodeBlock from '@theme/CodeBlock';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 if (ExecutionEnvironment.canUseDOM) {
     require('../../../component/index.js');
-    require('../../../component/tools/element.js');
 }
 import elementRaw from "!raw-loader!../../../component/tools/element.js"
 
@@ -36,17 +35,17 @@ toggleDisabled(callback) {
 ```
 
 ### 属性扩展
-#### 同步属性 syncChild
-同步自定义元素属性变更到shadowRoot内部元素，syncChild默认值为true，接受布尔和字符串的true/false
+#### 同步属性 sync
+同步自定义元素属性变更到shadowRoot内部元素，sync默认值为true，接受布尔和字符串的true/false
 ```html
-<s-button syncChild="false" disabled>没有同步属性</s-button>
-<s-button syncChild="false" disabled>同步按钮</s-button>
+<s-button sync="false" disabled>没有同步属性</s-button>
+<s-button sync="false" disabled>同步按钮</s-button>
 ```
-<s-button index="1" syncChild="false" disabled>没有同步属性</s-button>
+<s-button index="1" sync="false" disabled>没有同步属性</s-button>
 <s-button index="2" disabled>同步了属性</s-button>
 
 #### 尺寸 size
-支持设置size属性，属性会同步到shadowroot的第一个元素。
+支持设置size属性，属性会同步到shadowroot的第一级所有元素。
 ```jsx live
 <div>
     <s-button size="smallest">smallest</s-button>

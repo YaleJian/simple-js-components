@@ -2,12 +2,20 @@ import stools from "simple-js-tools"
 
 class Extend extends HTMLElement {
     //是否同步属性变更到子元素
-    get syncChild() {
-        return this.getAttribute("syncChild") || true
+    get sync() {
+        return this.getAttribute("sync") || true
     }
 
-    set syncChild(value) {
-        if (value === false) this.setAttribute("syncChild", value);
+    set sync(value) {
+        if (value === false) this.setAttribute("sync", value);
+    }
+
+    get name() {
+        return this.getAttribute("name")
+    }
+
+    set name(value) {
+        this.setAttribute("name", value);
     }
 }
 
@@ -52,7 +60,7 @@ let element = {
             callback = (args, _this) => {
 
                 return new Promise((resolve, reject) => {
-                    if (_this.syncChild === true || _this.syncChild === 'true') {
+                    if (_this.sync === true || _this.sync === 'true') {
                         element.syncAttr(_this, args)
                     }
                     resolve()
@@ -67,15 +75,22 @@ let element = {
     syncAttr(_this, args) {
         const name = args[0], oldValue = args[1], newValue = args[2]
         if (_this.shadowRoot.childNodes.length > 0) {
-            const el = _this.shadowRoot.childNodes[0]
-            if (newValue) {
-                console.log(name, newValue, args)
-                el.setAttribute(name, newValue)
-            } else {
-                el.toggleAttribute(name)
+            let childNodes = _this.shadowRoot.childNodes
+            for (let i = 0; i < childNodes.length; i++) {
+                let el = childNodes[0]
+                if (newValue) {
+                    el.setAttribute(name, newValue)
+                } else {
+                    el.toggleAttribute(name)
+                }
             }
             console.log("[HTMLElement syncAttr]", name, oldValue, newValue)
         }
+    },
+    initFontawesome(){
+        let script = document.createElement('script');
+        script.src = '/simple-web-components/js/kit.fontawesome.com_65599519ba.js';
+        document.head.appendChild(script);
     }
 }
 export default element

@@ -1,0 +1,76 @@
+---
+sidebar_position: 0
+---
+
+# 使用基础
+本章将会描述与Element类有关的方法和属性的使用建议。
+
+## 概念
+
+### this指向
+在构造函数里的this指向的是原型，原型对象函数里的this指向的是实例。
+
+### 实例、原型、原型链
+class定义一个类，这个类就是原型（prototype），new 此类会创建一个实例，并默认加一个属性原型链（__proto__），原型链的构造方法会指向此原型。
+
+``` jsx live
+function render(){
+    class person{
+        constructor(name) {
+            this.name = name
+        }
+        get age(){
+            return
+        }
+    }
+
+    person.prototype.grade = 2
+    let ming = new person("Xiao Ming")
+    ming.__proto__.constructor.prototype.height = 130
+    let zhang = new person("Xiao Zhang")
+    person.prototype.grade = 3
+    zhang.__proto__.constructor.prototype.height = 120
+
+    return <ul>
+            <li>{ming.name}：年龄{ming.age} 身高{ming.height} 年级{ming.grade}</li>
+            <li>{zhang.name}：年龄{zhang.age} 身高{zhang.height} 年级{zhang.grade}</li>
+           </ul>
+}
+```
+
+## 定义属性
+
+
+
+### 元素属性
+HTML元素查看和修改属性值分别使用getAttribute和setAttribute方法，操作DOM需要考虑性能成本。
+
+```javascript
+class el extends HTMLElement{
+    get loading() {
+        return this.getAttribute("loading");
+    }
+    set loading(value) {
+        this.setAttribute("loading", value);
+    }
+}
+```
+
+### 非元素属性
+定义类的属性，使用get和set修改一个内部变量能拦截定义属性的查看和修改行为，用private修饰符能够避免内部变量被直接修改
+```javascript
+class el extends HTMLElement{
+
+    private _show = false
+
+    get show() {
+        return this._show;
+    }
+    set show(value) {
+        this._show = value;
+    }
+}
+```
+
+## 定义方法
+通过原型定义的方法会影响所有构造出的实例，通过实例定义的方法只影响实例本身。
