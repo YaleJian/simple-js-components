@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 4201628 */
+  /* Color fonts */
+  src: 
+       url('/simple-web-components/font/iconfont.woff2?t=1691462778950') format('woff2'),
+       url('/simple-web-components/font/iconfont.woff?t=1691462778950') format('woff'),
+       url('/simple-web-components/font/iconfont.ttf?t=1691462778950') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 48px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-duoyun-wanjian:before {
+  content: "\e632";
+}
+

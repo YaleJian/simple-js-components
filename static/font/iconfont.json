@@ -1,0 +1,16 @@
+{
+  "id": "4201628",
+  "name": "彩色图标测试",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "36800717",
+      "name": "多云-晚间",
+      "font_class": "duoyun-wanjian",
+      "unicode": "e632",
+      "unicode_decimal": 58930
+    }
+  ]
+}

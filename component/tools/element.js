@@ -87,10 +87,47 @@ let element = {
             console.log("[HTMLElement syncAttr]", name, oldValue, newValue)
         }
     },
-    initFontawesome(){
+    loadFont(family, source, descriptors){
+
+        //默认字体
+        /*if(!family) family = "iconfont"
+        if(!source) source = [
+            "url('/simple-web-components/font/iconfont.woff2?t=1691462778950') format('woff2')",
+            "url('/simple-web-components/font/iconfont.woff?t=1691462778950') format('woff')",
+            "url('/simple-web-components/font/iconfont.ttf?t=1691462778950') format('truetype')"
+        ]
+        if(!descriptors) descriptors = {
+            style: "normal",
+            weight: "400",
+            stretch: "condensed",
+        }
+
+        const font = new FontFace(family, source, descriptors)
+        // wait for font to be loaded
+        font.load().then((fontFace)=>{
+            // add font to document
+            document.fonts.add(font);
+            // enable font with CSS class
+            document.body.classList.add("fonts-loaded");
+        });
+
+        const css = '.iconfont { font-family: "iconfont" !important; font-size: 42px; }';
+        const sheet = new CSSStyleSheet();
+        sheet.replaceSync(css);
+        document.adoptedStyleSheets = [sheet];*/
+
+        let head = document.getElementsByTagName('head')[0];
+        let link = document.createElement('link');
+        link.type='text/css';
+        link.rel = 'stylesheet';
+        link.href = "/simple-web-components/font/iconfont.css";
+        head.appendChild(link);
+
         let script = document.createElement('script');
-        script.src = '/simple-web-components/js/kit.fontawesome.com_65599519ba.js';
-        document.head.appendChild(script);
+        script.src = "/simple-web-components/font/iconfont.js";
+        head.appendChild(script);
+
+        console.log("loadFont")
     }
 }
 export default element

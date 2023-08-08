@@ -2,19 +2,183 @@
 sidebar_position: 4
 ---
 
-import element from "../../component/tools/element";
-element.initFontawesome()
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+if (ExecutionEnvironment.canUseDOM) {
+    require('../../component/index.js');
+}
 
 # 图标
-语义化的矢量图标。
+图标组件，提供便捷的图标库集成方式。
 
-目前矢量图标技术有两种：字体和svg，位图图标技术和图片一致。
+# 理解图标
+图形标记简称图标。渲染角度看，这个图形可以是位图也可以是矢量图，有色彩或没色彩；交互角度看，这个图可以有哪些变化，尺寸、位置、颜色的变化。图标
+一般和其他元素结合起来，形成一个功能。
 
-## 矢量图标
-### SVG
-```html
-<s-icon>Icon</s-icon>
+## 如何使用
+
+### 矢量
+
+#### 系统字体
+Unicode 是字体在网页端最原始的应用方式
+```jsx live
+<s-icon class="iconfont">&#xe632;</s-icon>
+```
+##### 字体class
+font-class 是 Unicode 使用方式的一种变种，主要是解决 Unicode 书写不直观，语意不明确的问题。
+这种方式依赖css的伪类，需要有所有图标的伪类定义,例如：
+``` css
+.icon-duoyun-wanjian:before {
+  content: "\e632";
+}
 ```
 
-<s-icon type="svg" name="fa-solid fa-thumbs-up fa-5x"/>
+```jsx live
+<s-icon class="iconfont icon-duoyun-wanjian"></s-icon>
+```
 
+
+#### SVG Symbol
+这是一种全新的使用方式，应该说这才是未来的主流，也是平台目前推荐的用法。相关介绍可以参考这篇[文章](https://www.zhangxinxu.com/wordpress/2014/07/introduce-svg-sprite-technology/?spm=a313x.help_detail.1998910419.84.b39d3a81xrWVaX) 这种用法其实是做了一个 SVG 的集合，与另外两种相比具有如下特点：
+
+- 支持多色图标了，不再受单色限制。
+- 通过一些技巧，支持像字体那样，通过 `font-size`, `color` 来调整样式。
+- 兼容性较差，支持 IE9+，及现代浏览器。
+- 浏览器渲染 SVG 的性能一般，还不如 png。
+
+```jsx live
+<div>
+<svg className="icon" aria-hidden="true"><use href="#icon-duoyun-wanjian"></use></svg>
+
+</div>
+```
+
+#### 位图
+
+
+
+## 扩展
+
+> 扩展知识参考了[iconfont](https://www.iconfont.cn/)，提供了非常便捷的图标方案。
+
+目前矢量图标技术有两种：字体和svg，字体是使用的操作系统层面的渲染所以更快，所以推荐使用。
+
+### 彩色字体格式
+OpenType 规范中彩色字体技术已经趋于成熟了，目前支持彩色字体的格式主要有以下几种，它们都是 OpenType 规范的一部分：
+
+| 公司/组织            | 字体格式（表名） | 矢量 | 位图 | 渐变 | 系统支持                                                                                                             |
+|------------------|----------|----|----|----|------------------------------------------------------------------------------------------------------------------|
+| W3C              | SVG      | ✅  | ✅  | ✅  | [macOS 10.14+,   iOS 12+,Windows 10 周年更新](https://docs.microsoft.com/zh-cn/windows/win32/direct2d/svg-support)   |
+| Microsoft        | COLR     | ✅  | ❌  | ❌  | macOS 10.13+, iOS 11+, Windows 8.1+                                                                              |
+| Apple            | SBIX     | ❌  | ✅  | ✅  | macOS and iOS                                                                                                    |
+| Google           | CBDT     | ❌  | ✅  | ✅  | Android                                                                                                          |
+| Google&Microsoft | COLRv1   | ✅  | ❌  | ✅  | [仅Chrome Canary 90.0.4421.5+](https://github.com/googlefonts/colr-gradients-spec#chromium-skia-freetype-support) |
+
+- **SVG**：由 Adobe 和 Mozilla 主导的**矢量字体**标准，全称是 OpenType SVG（以下简称 OT-SVG）。其中不仅包含了标准的 TrueType 或 CFF 字形信息，还包含了可选的 SVG 数据，允许为字体定义颜色、渐变甚至是动画效果。SVG 标准中的配色信息也将存储在 CPAL 表中。注意：Apple 的实现遵循 W3C 的[SVG Native](https://svgwg.org/specs/svg-native/)规范，这是 SVG 1.1 的子集。
+- **COLR/CPAL(**version 0**)**：由微软主导的**矢量字体**标准。其中 COLR 记录图层数据，CPAL 记录配色信息，对其的支持集成在 Windows 8.1 及之后的版本中（该版本不支持渐变）。
+- **CBDT/CBLC**：由 Google 主导的**位图字体**标准。其中 CBDT 记录彩色位图数据，CBLC 记录位图定位数据，这其实是 EBDT/EBLC 的彩色版本。
+- **SBIX**：由 Apple 主导的**位图字体**标准，也就是**Apple Emoji**使用的格式。SBIX 即标准位图图像表其中包含了 PNG、JPEG 或 TIFF 的图片信息，对其的支持集成在 macOS 和 iOS 中。
+- **COLRv1 (**version 1**)：**由 Google 推动的基于COLR/CPAL 表的升级版，**支持渐变**、仿射变换（Affine transformation）和多种混合模式。目前已经进入了[OpenType 1.9 Alpha](https://docs.microsoft.com/zh-cn/typography/opentype/otspec190alpha/ot190alpha)规范中。
+
+### 图标使用方式
+#### Unicode
+Unicode 是字体在网页端最原始的应用方式，特点是：
+
+- 支持按字体的方式去动态调整图标大小，颜色等等。
+- 默认情况下不支持多色，直接添加多色图标会自动去色。
+
+> 注意：新版 iconfont 支持两种方式引用多色图标：SVG symbol 引用方式和彩色字体图标模式。（使用彩色字体图标需要在「编辑项目」中开启「彩色」选项后并重新生成。）
+
+Unicode 使用步骤如下：
+
+#####  第一步：拷贝项目下面生成的 `@font-face`
+
+```css
+@font-face {
+  font-family: 'iconfont';
+  src:
+       url('iconfont.woff2?t=1691462778950') format('woff2'),
+       url('iconfont.woff?t=1691462778950') format('woff'),
+       url('iconfont.ttf?t=1691462778950') format('truetype');
+}
+```
+
+#####  第二步：定义使用 iconfont 的样式
+
+```css
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+```
+
+#####  第三步：挑选相应图标并获取字体编码，应用于页面
+
+```html
+<span class="iconfont">&#x33;</span>
+```
+
+#### Font class
+font-class 是 Unicode 使用方式的一种变种，主要是解决 Unicode 书写不直观，语意不明确的问题。
+
+与 Unicode 使用方式相比，具有如下特点：
+
+- 相比于 Unicode 语意明确，书写更直观。可以很容易分辨这个 icon 是什么。
+- 因为使用 class 来定义图标，所以当要替换图标时，只需要修改 class 里面的 Unicode 引用。
+
+使用步骤如下：
+
+#####  第一步：引入项目下面生成的 fontclass 代码：
+
+```html
+<link rel="stylesheet" href="./iconfont.css">
+```
+
+#####  第二步：挑选相应图标并获取类名，应用于页面：
+
+```html
+<span class="iconfont icon-xxx"></span>
+```
+
+
+#### Symbol
+这是一种全新的使用方式，应该说这才是未来的主流，也是平台目前推荐的用法。相关介绍可以参考这篇[文章](https://www.zhangxinxu.com/wordpress/2014/07/introduce-svg-sprite-technology/?spm=a313x.help_detail.1998910419.84.b39d3a81xrWVaX) 这种用法其实是做了一个 SVG 的集合，与另外两种相比具有如下特点：
+
+- 支持多色图标了，不再受单色限制。
+- 通过一些技巧，支持像字体那样，通过 `font-size`, `color` 来调整样式。
+- 兼容性较差，支持 IE9+，及现代浏览器。
+- 浏览器渲染 SVG 的性能一般，还不如 png。
+
+使用步骤如下：
+
+#####  第一步：引入项目下面生成的 symbol 代码：
+
+```html
+<script src="./iconfont.js"></script>
+```
+
+#####  第二步：加入通用 CSS 代码（引入一次就行）：
+
+```html
+<style>
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+</style>
+```
+
+#####  第三步：挑选相应图标并获取类名，应用于页面：
+
+```html
+<svg class="icon" aria-hidden="true">
+  <use xlink:href="#icon-xxx"></use>
+</svg>
+```
+
+图标可以设置类型属性type、图标名称name

@@ -17,6 +17,10 @@ for (let i in components){
     }
 }
 
+//加载默认字体
+element.loadFont()
+
 export {
-    Button
+    Button,
+    Icon
 }

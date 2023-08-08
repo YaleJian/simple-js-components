@@ -1,19 +1,21 @@
 import Base from "../Base";
+import element from "../tools/element";
+
 /**
  * 图标
  */
 export default class Icon extends Base {
     element;
 
-    constructor() {
+    constructor(fontFace) {
         super();
         const shadowRoot = this.attachShadow({mode: "open"})
-        shadowRoot.innerHTML = `<div class="icon" part="icon" id="icon">
-                                    <i class=""></i>
+        shadowRoot.innerHTML = `<div class="icon iconfont" part="icon" id="icon">
                                     <slot></slot>
                                 </div>`;
+        const wrapper = document.createElement('span');
+        wrapper.setAttribute('class', 'icon');
         this.element = shadowRoot.getElementById("icon");
-
     }
 
     static get observedAttributes() {
@@ -24,23 +26,32 @@ export default class Icon extends Base {
         ];
     }
 
-    get type(){
-
-    }
-    set type(type){
-        console.log(type)
+    get type() {
+        return this.getAttribute("type")
     }
 
-    get name(){
+    set type(value) {
+        this.setAttribute("type", value)
+    }
+
+    get name() {
         this.getAttribute("name")
     }
 
-    set name(value){
-        console.log(value)
+    set name(value) {
         this.setAttribute("name", value);
-        this.element.getElementById("i").setAttribute("class",value)
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
+        if (['name'].includes(name)) {
+            let svg = document.createElement('svg')
+            svg.setAttribute("class", "icon")
+            svg.setAttribute("aria-hidden", "true")
+            let use = document.createElement('use')
+            use.setAttribute("href", `#icon-${newValue}`)
+            svg.append(use)
+            this.removeChild("shadowRoot")
+            this.prepend(svg)
+        }
     }
 }
