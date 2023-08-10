@@ -1,4 +1,4 @@
-# Simple Web Components
+# Simple Web
 基于Web Component的 Headless组件，不含UI，只有组件逻辑，为了写UI组件库时能专注设计。
 
 ## 在vue中使用

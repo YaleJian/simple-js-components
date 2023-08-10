@@ -14,7 +14,7 @@ let config = (format, filePrefix) => {
     return {
         input: './components/button.js',
         output: {
-            file: `${filePrefix}simple-web-components${format === 'iife' ? '' : `.${format}`}.js`,
+            file: `${filePrefix}simple-web${format === 'iife' ? '' : `.${format}`}.js`,
             format: format,
             name: 'miniSDK',
             compact: true,

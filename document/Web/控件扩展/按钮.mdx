@@ -1,0 +1,37 @@
+---
+sidebar_position: 3
+---
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+if (ExecutionEnvironment.canUseDOM) {
+    require('../../../code/index.js');
+}
+
+# 按钮
+```html
+<button>Button</button>
+```
+
+<button>Button</button>
+
+## 尺寸 size
+支持设置size属性，属性会同步到shadowroot的第一个元素。
+```jsx live
+<div>
+    <button size="smallest">smallest</button>
+    <button size="smaller">smaller</button>
+    <button size="small">small</button>
+    <button size="default">default</button>
+    <button size="big">big</button>
+    <button size="bigger">bigger</button>
+    <button size="biggest">biggest</button>
+    <button size1="biggest">biggest1</button>
+</div>
+```
+
+## 禁用 disabled
+
+```html
+<button disabled>Button</button>
+```
+
+<button disabled>Button</button>

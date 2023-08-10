@@ -6,20 +6,20 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-    title: 'Simple Web Components',
-    tagline: '基于Web Component的 Headless组件，不含UI，只有组件逻辑，为了写UI组件库时能专注设计。',
+    title: 'Simple Web',
+    tagline: '致力于简化Web知识，破除繁琐沉重的框架和UI。',
     favicon: 'img/favicon.ico',
 
     // Set the production url of your site here
     url: 'https://yalejian.github.io',
     // Set the /<baseUrl>/ pathname under which your site is served
     // For GitHub pages deployment, it is often '/<projectName>/'
-    baseUrl: '/simple-web-components',
+    baseUrl: '/simple-web',
 
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
     organizationName: 'yalejian', // Usually your GitHub org/user name.
-    projectName: 'simple-web-components', // Usually your repo name.
+    projectName: 'simple-web', // Usually your repo name.
     deploymentBranch: 'gh-pages',
     trailingSlash: false,
 
@@ -47,14 +47,14 @@ const config = {
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
                     editUrl:
-                        'https://github.com/YaleJian/simple-web-components',
+                        'https://github.com/YaleJian/simple-web',
                 },
                 blog: {
                     showReadingTime: true,
                     // Please change this to your repo.
                     // Remove this to remove the "edit this page" links.
                     editUrl:
-                        'https://github.com/YaleJian/simple-web-components',
+                        'https://github.com/YaleJian/simple-web',
                     blogSidebarTitle: '最新文章',
                     blogSidebarCount: 0,
                 },
@@ -78,7 +78,7 @@ const config = {
             /*announcementBar: {
                 id: 'support_us',
                 content:
-                    '编码不易，给个星星支持下吧 <a target="_blank" rel="noopener noreferrer" href="https://github.com/YaleJian/simple-web-components">GitHub</a>',
+                    '编码不易，给个星星支持下吧 <a target="_blank" rel="noopener noreferrer" href="https://github.com/YaleJian/simple-web">GitHub</a>',
                 backgroundColor: '#fafbfc',
                 textColor: '#091E42',
                 isCloseable: false,
@@ -88,9 +88,9 @@ const config = {
                 maxHeadingLevel: 6,
             },
             navbar: {
-                title: 'Simple Web Components',
+                title: 'Simple Web',
                 logo: {
-                    alt: 'Simple Web Components',
+                    alt: 'Simple Web',
                     src: 'img/favicon.ico',
                     srcDark: 'img/favicon.ico',
                     href: '/',
@@ -106,7 +106,7 @@ const config = {
                         type: 'docSidebar',
                         sidebarId: 'apiSidebar',
                         position: 'left',
-                        label: '组件',
+                        label: '开发文档',
                     },
                     {to: '/blog', label: '相关文章', position: 'left'},
                     {
@@ -125,7 +125,7 @@ const config = {
                         position: 'right',
                     },
                     {
-                        href: 'https://github.com/YaleJian/simple-web-components',
+                        href: 'https://github.com/YaleJian/simple-web',
                         label: 'GitHub',
                         position: 'right',
                     },
@@ -148,11 +148,11 @@ const config = {
                         items: [
                             {
                                 label: '讨论',
-                                href: 'https://github.com/YaleJian/simple-web-components/discussions',
+                                href: 'https://github.com/YaleJian/simple-web/discussions',
                             },
                             {
                                 label: '反馈',
-                                href: 'https://github.com/YaleJian/simple-web-components/issues',
+                                href: 'https://github.com/YaleJian/simple-web/issues',
                             },
                         ],
                     },

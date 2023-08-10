@@ -1,5 +1,5 @@
-import Base from "../Base";
-import element from "../tools/element";
+import Base from "../../Base.js";
+import element from "../../tools/element";
 
 /**
  * 图标

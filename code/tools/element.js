@@ -92,9 +92,9 @@ let element = {
         //默认字体
         /*if(!family) family = "iconfont"
         if(!source) source = [
-            "url('/simple-web-components/font/iconfont.woff2?t=1691462778950') format('woff2')",
-            "url('/simple-web-components/font/iconfont.woff?t=1691462778950') format('woff')",
-            "url('/simple-web-components/font/iconfont.ttf?t=1691462778950') format('truetype')"
+            "url('/simple-web/font/iconfont.woff2?t=1691462778950') format('woff2')",
+            "url('/simple-web/font/iconfont.woff?t=1691462778950') format('woff')",
+            "url('/simple-web/font/iconfont.ttf?t=1691462778950') format('truetype')"
         ]
         if(!descriptors) descriptors = {
             style: "normal",
@@ -120,11 +120,11 @@ let element = {
         let link = document.createElement('link');
         link.type='text/css';
         link.rel = 'stylesheet';
-        link.href = "/simple-web-components/font/iconfont.css";
+        link.href = "/simple-web/font/iconfont.css";
         head.appendChild(link);
 
         let script = document.createElement('script');
-        script.src = "/simple-web-components/font/iconfont.js";
+        script.src = "/simple-web/font/iconfont.js";
         head.appendChild(script);
 
         console.log("loadFont")

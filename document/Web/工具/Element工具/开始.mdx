@@ -4,12 +4,14 @@ sidebar_position: 1
 import CodeBlock from '@theme/CodeBlock';
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
 if (ExecutionEnvironment.canUseDOM) {
-    require('../../../component/index.js');
-    require('../../../component/tools/element.js');
+    require('../../../../code/index.js');
+    require('../../../../code/tools/element.js');
 }
-import elementRaw from "!raw-loader!../../../component/tools/element.js"
+import elementRaw from "!raw-loader!../../../../code/tools/element.js"
 
-# Element工具
+# 开始
+
+## 介绍
 扩展Element类功能的工具，所有组件都可以继承的功能。
 
 ## 使用方法
@@ -47,3 +49,9 @@ class example {
 element.init(example)
 
 ```
+
+## 保留关键字
+以下为使用本工具，元素属性的需要保留关键字：
+- sync
+- size
+- disabled

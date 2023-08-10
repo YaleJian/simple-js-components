@@ -1,7 +1,7 @@
 {
-  "name": "simple-web-components",
+  "name": "simple-web",
   "version": "1.0.0-beta.1",
-  "description": "simple web components",
+  "description": "Simple Web",
   "main": "index.js",
   "module": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yalejian/simple-web-components.git"
+    "url": "git+https://github.com/yalejian/simple-web.git"
   },
   "keywords": [
     "web-components"
@@ -25,15 +25,15 @@
   "author": "yalejian",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yalejian/simple-web-components/issues"
+    "url": "https://github.com/yalejian/simple-web/issues"
   },
   "publishConfig": {
     "registry1": "https://npm.pkg.github.com/@yalejian"
   },
-  "homepage": "https://github.com/yalejian/simple-web-components#readme",
+  "homepage": "https://github.com/yalejian/simple-web#readme",
   "files": [
     "index.js",
-    "component"
+    "code"
   ],
   "dependencies": {
     "simple-js-tools": "^1.0.0-beta.7",
