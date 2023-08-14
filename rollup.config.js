@@ -12,11 +12,11 @@ let configList = []
 let formats = ['iife', 'es', 'cjs', 'umd']
 let config = (format, filePrefix) => {
     return {
-        input: './components/button.js',
+        input: './code/index.js',
         output: {
             file: `${filePrefix}simple-web${format === 'iife' ? '' : `.${format}`}.js`,
             format: format,
-            name: 'miniSDK',
+            name: 'simpleWeb',
             compact: true,
             banner: '/* version ' + packageData.version + ' */',
             footer: '/* End */',
@@ -25,7 +25,7 @@ let config = (format, filePrefix) => {
         plugins: [
             nodePolyfills(),
             babel({
-                babelHelpers: 'bundled',
+                babelHelpers: 'runtime',
                 exclude: 'node_modules',
             }),
             commonjs(),
@@ -34,7 +34,7 @@ let config = (format, filePrefix) => {
             // cssnano(),
             copy({
                 targets: [
-                    {src: './README.md', dest: 'publish'},
+                    // {src: './README.md', dest: 'publish'},
                 ]
             }),
             terser({
@@ -46,5 +46,4 @@ let config = (format, filePrefix) => {
     }
 }
 configList = formats.map(f => config(f, 'publish/dist/'))
-// configList = configList.concat(formats.map(f => config(f, '../miniSDK/lib/')))
 export default configList

@@ -1,16 +1,11 @@
 import Base from "../../Base.js";
 
-export default class Button extends Base {
-    element;//真实的元素
+export default class Button extends HTMLButtonElement {
 
 
     constructor() {
         super();
-        const shadowRoot = this.attachShadow({mode: "open"})
-        shadowRoot.innerHTML = `<button class="button" part="button" id="button">
-                                    <slot></slot>
-                                </button>`;
-        this.element = shadowRoot.getElementById("button");
+        this.render();
 
     }
 

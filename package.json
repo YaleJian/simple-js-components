@@ -1,5 +1,5 @@
 {
-  "name": "simple-web",
+  "name": "@simple-web/",
   "version": "1.0.0-beta.1",
   "description": "Simple Web",
   "main": "index.js",
@@ -13,7 +13,8 @@
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
     "write-translations": "docusaurus write-translations",
-    "write-heading-ids": "docusaurus write-heading-ids"
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "build-lib": "rollup -c --bundleConfigAsCjs ./rollup.config.js"
   },
   "repository": {
     "type": "git",
@@ -22,8 +23,8 @@
   "keywords": [
     "web-components"
   ],
-  "author": "yalejian",
-  "license": "MIT",
+  "author": "扬歌YaleJian",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/yalejian/simple-web/issues"
   },
@@ -32,8 +33,8 @@
   },
   "homepage": "https://github.com/yalejian/simple-web#readme",
   "files": [
-    "index.js",
-    "code"
+    "publish/index.js",
+    "publish/dist"
   ],
   "dependencies": {
     "simple-js-tools": "^1.0.0-beta.7",
@@ -49,7 +50,20 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.4.1"
+    "@docusaurus/module-type-aliases": "2.4.1",
+    "@babel/core": "^7.22.10",
+    "@babel/preset-env": "^7.22.10",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^24.0.3",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "cross-env": "^7.0.3",
+    "events": "^3.3.0",
+    "rollup": "^3.28.0",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-polyfill-node": "^0.12.0",
+    "ws": "^8.13.0"
   },
   "browserslist": {
     "production": [
