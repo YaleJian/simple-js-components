@@ -1,0 +1,123 @@
+/*size start*/
+:root {
+    --size-xx-small: 10px;
+    --size-x-small: 12px;
+    --size-small: 14px;
+    --size-medium: 16px;
+    --size-large: 18px;
+    --size-x-large: 20px;
+    --size-xx-large: 24px;
+    --size-xxx-large: 32px;
+}
+
+/*size end*/
+
+/*font-size start*/
+.xx-small {
+    font-size: xx-small;
+}
+
+.x-small {
+    font-size: x-small;
+}
+
+.small {
+    font-size: small;
+}
+
+.medium {
+    font-size: medium;
+}
+
+.large {
+    font-size: large;
+}
+
+.x-large {
+    font-size: x-large;
+}
+
+.xx-large {
+    font-size: xx-large;
+}
+
+.xxx-large {
+    font-size: xxx-large;
+}
+
+/*font-size end*/
+
+:root{
+    --grey-lightest: #f2f2f2;
+    --grey-lighter: #d0d0d0;
+    --grey-light: #c2c2c2;
+    --grey:#969696;
+    --grey-dark:#696969;
+    --grey-darker:#5b5b5b;
+    --grey-darkest:#2b2b2b;
+    --black: black;
+}
+/*grey start*/
+/*grey start*/
+
+/*color start*/
+:root {
+    /*深色*/
+    --color-red: #ff8080;
+    --color-red-dark: #de4f4f;
+    --color-red-darker: #872d2d;
+
+    --color-green: #44e293;
+    --color-green-dark: #00b35a;
+    --color-green-darker: #008738;
+
+    --color-blue: #5cccda;
+    --color-blue-dark: #009fb7;
+    --color-blue-darker: #006887;
+
+    --color-orange: #ffad49;
+    --color-orange-dark: #de8500;
+    --color-orange-darker: #875600;
+
+    --color-purple: #d569e8;
+    --color-purple-dark: #bb5acc;
+    --color-purple-darker: #9a3eab;
+
+    --color-yellow: #FFEB3B;
+    --color-yellow-dark: #e6d118;
+    --color-yellow-darker: #cebb14;
+
+    /*浅色*/
+    --color-light-red: #ffcfcf;
+    --color-light-red-lighter: #ffd9d9;
+
+    --color-light-green: #c7f3ec;
+    --color-light-green-lighter: #d4f8ec;
+
+    --color-light-blue: #c6ecf3;
+    --color-light-blue-lighter: #d5f2fa;
+
+    --color-light-orange: #f5dfcb;
+    --color-light-orange-lighter: #ffead4;
+
+    --color-light-purple: #edccf1;
+    --color-light-purple-lighter: #fbd6ff;
+
+    --color-light-yellow: #f6f2cc;
+    --color-light-yellow-lighter: #fcf8d2;
+}
+
+/*color end*/
+
+/*radius start*/
+:root {
+    --radius-2: 2px;
+    --radius-4: 4px;
+    --radius-6: 6px;
+    --radius-8: 8px;
+    --radius-10: 10px;
+    --radius-12: 12px;
+    --radius-16: 16px;
+}
+
+/*radius end*/

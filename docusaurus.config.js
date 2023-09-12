@@ -108,6 +108,12 @@ const config = {
                         position: 'left',
                         label: '开发文档',
                     },
+                    {
+                        type: 'docSidebar',
+                        sidebarId: 'expandSidebar',
+                        position: 'left',
+                        label: '拓展知识',
+                    },
                     {to: '/blog', label: '相关文章', position: 'left'},
                     {
                         type: 'search',

@@ -1,0 +1,109 @@
+---
+sidebar_position: 1
+---
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+if (ExecutionEnvironment.canUseDOM) {
+    require('../../../code/index.js');
+}
+
+# 按钮
+按钮作为交互的最基础组件，不合适去个性化封装，更多从无损扩展的角度设计。
+
+<button className="s">Button</button>
+
+## 尺寸 size
+```html
+<button class="s xx-small">xx-small</button>
+<button class="s x-small">x-small</button>
+<button class="s">default</button>
+<button class="s small">small</button>
+<button class="s medium">medium</button>
+<button class="s">large</button>
+<button class="s x-large">x-large</button>
+<button class="s xx-large">xx-large</button>
+<button class="s xxx-large">xxx-large</button>
+```
+<button className="">xx-small</button>
+<button className="">xx-small</button>
+<button className="s xx-small">xx-small</button>
+<button className="s x-small">x-small</button>
+<button className="s">default</button>
+<button className="s small">small</button>
+<button className="s medium">medium</button>
+<button className="s large">large</button>
+<button className="s x-large">x-large</button>
+<button className="s xx-large">xx-large</button>
+<button className="s xxx-large">xxx-large</button>
+
+## 颜色 color
+默认按钮为grey类型。
+```html
+<button class="s grey">grey</button>
+<button class="s black">black</button>
+<button class="s red">red</button>
+<button class="s green">green</button>
+<button class="s blue">green</button>
+<button class="s orange">green</button>
+<button class="s purple">green</button>
+<button class="s yellow">green</button>
+```
+<button className="s grey">grey</button>
+<button className="s black">black</button>
+<button className="s red">red</button>
+<button className="s green">green</button>
+<button className="s blue">blue</button>
+<button className="s orange">orange</button>
+<button className="s purple">purple</button>
+<button className="s yellow">yellow</button>
+
+### 浅色
+```html
+<button class="s light-grey">grey</button>
+<button class="s light-black">black</button>
+<button class="s light-red">red</button>
+<button class="s light-green">green</button>
+<button class="s light-blue">green</button>
+<button class="s light-orange">green</button>
+<button class="s light-purple">green</button>
+<button class="s light-yellow">green</button>
+```
+<button className="s light-grey">grey</button>
+<button className="s light-black">black</button>
+<button className="s light-red">red</button>
+<button className="s light-green">green</button>
+<button className="s light-blue">blue</button>
+<button className="s light-orange">orange</button>
+<button className="s light-purple">purple</button>
+<button className="s light-yellow">yellow</button>
+
+### 浅色无边框
+```html
+<button class="s light-grey no-border">grey</button>
+<button class="s light-black no-border">black</button>
+<button class="s light-red no-border">red</button>
+<button class="s light-green no-border">green</button>
+<button class="s light-blue no-border">green</button>
+<button class="s light-orange no-border">green</button>
+<button class="s light-purple no-border">green</button>
+<button class="s light-yellow no-border">green</button>
+```
+<button className="s light-grey no-border">grey</button>
+<button className="s light-black no-border">black</button>
+<button className="s light-red no-border">red</button>
+<button className="s light-green no-border">green</button>
+<button className="s light-blue no-border">blue</button>
+<button className="s light-orange no-border">orange</button>
+<button className="s light-purple no-border">purple</button>
+<button className="s light-yellow no-border">yellow</button>
+
+## 圆角
+
+## 禁用 disabled
+
+# 使用技巧
+## 组合按钮
+
+```html
+<button class="s" disabled>Button</button>
+```
+<button className="s" disabled>Button</button>
