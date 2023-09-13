@@ -1,0 +1,272 @@
+.s {
+
+    &[disabled] {
+        pointer-events: none;
+        background: var(--gray-lighter);
+        opacity: 0.6;
+    }
+
+    &.no-radius {
+        border-radius: 0
+    }
+
+    &.radius-circle{
+        border-radius: 50%;
+    }
+    &.radius-1{
+        border-radius: var(--radius-1);
+    }
+    &.radius-2{
+        border-radius: var(--radius-2);
+    }
+    &.radius-3{
+        border-radius: var(--radius-3);
+    }
+    &.radius-4{
+        border-radius: var(--radius-4);
+    }
+    &.radius-5{
+        border-radius: var(--radius-5);
+    }
+    &.radius-6{
+        border-radius: var(--radius-6);
+    }
+    &.radius-7{
+        border-radius: var(--radius-7);
+    }
+    &.radius-8{
+        border-radius: var(--radius-8);
+    }
+
+    &.black {
+        color: white;
+        background: black;
+        border: 1px solid black;
+
+        &:hover {
+            background: var(--gray-darkest);
+            border: 1px solid var(--gray-darkest);
+        }
+
+        &:active {
+            background: var(--gray-darker);
+            border: 1px solid var(--gray-darker);
+        }
+    }
+
+    &.red {
+        color: white;
+        background: var(--color-red);
+        border: 1px solid var(--color-red);
+
+        &:hover {
+            background: var(--color-red-dark);
+            border: 1px solid var(--color-red-dark);
+        }
+
+        &:active {
+            background: var(--color-red-darker);
+            border: 1px solid var(--color-red-darker);
+        }
+    }
+
+    &.green {
+        color: white;
+        background: var(--color-green);
+        border: 1px solid var(--color-green);
+
+        &:hover {
+            background: var(--color-green-dark);
+            border: 1px solid var(--color-green);
+        }
+
+        &:active {
+            background: var(--color-green-darker);
+            border: 1px solid var(--color-green);
+        }
+    }
+
+    &.blue {
+        color: white;
+        background: var(--color-blue);
+        border: 1px solid var(--color-blue);
+
+        &:hover {
+            background: var(--color-blue-dark);
+            border: 1px solid var(--color-blue-dark);
+        }
+
+        &:active {
+            background: var(--color-blue-darker);
+            border: 1px solid var(--color-blue-darker);
+        }
+    }
+
+    &.orange {
+        color: white;
+        background: var(--color-orange);
+        border: 1px solid var(--color-orange);
+
+        &:hover {
+            background: var(--color-orange-dark);
+            border: 1px solid var(--color-orange-dark);
+        }
+
+        &:active {
+            background: var(--color-orange-darker);
+            border: 1px solid var(--color-orange-darker);
+        }
+    }
+
+    &.purple {
+        color: white;
+        background: var(--color-purple);
+        border: 1px solid var(--color-purple);
+
+        &:hover {
+            background: var(--color-purple-dark);
+            border: 1px solid var(--color-purple-dark);
+        }
+
+        &:active {
+            background: var(--color-purple-darker);
+            border: 1px solid var(--color-purple-darker);
+        }
+    }
+
+    &.yellow {
+        color: black;
+        background: var(--color-yellow);
+        border: 1px solid var(--color-yellow);
+
+        &:hover {
+            background: var(--color-yellow-dark);
+            border: 1px solid var(--color-yellow-dark);
+        }
+
+        &:active {
+            background: var(--color-yellow-darker);
+            border: 1px solid var(--color-yellow-darker);
+        }
+    }
+
+    /*浅色*/
+
+    &.light-black {
+        color: black;
+        background: #ffffff00;
+        border: 1px solid black;
+
+        &:hover {
+            color: white;
+            background: black;
+        }
+
+        &:active {
+            color: white;
+            background: var(--gray-darker);
+        }
+    }
+
+    &.light-red {
+        color: var(--color-red);
+        background: #ffffff00;
+        border: 1px solid var(--color-red);
+
+        &:hover {
+            background: var(--color-light-red);
+        }
+
+        &:active {
+            background: var(--color-light-red-lighter);
+        }
+    }
+
+    &.light-green {
+        color: var(--color-green);
+        background: #ffffff00;
+        border: 1px solid var(--color-green);
+
+        &:hover {
+            background: var(--color-light-green);
+        }
+
+        &:active {
+            background: var(--color-light-green-lighter);
+        }
+    }
+
+    &.light-blue {
+        color: var(--color-blue);
+        background: #ffffff00;
+        border: 1px solid var(--color-blue);
+
+        &:hover {
+            background: var(--color-light-blue);
+        }
+
+        &:active {
+            background: var(--color-light-blue-lighter);
+        }
+    }
+
+    &.light-orange {
+        color: var(--color-orange);
+        background: #ffffff00;
+        border: 1px solid var(--color-orange);
+
+        &:hover {
+            background: var(--color-light-orange);
+        }
+
+        &:active {
+            background: var(--color-light-orange-lighter);
+        }
+    }
+
+    &.light-purple {
+        color: var(--color-purple);
+        background: #ffffff00;
+        border: 1px solid var(--color-purple);
+
+        &:hover {
+            background: var(--color-light-purple);
+        }
+
+        &:active {
+            background: var(--color-light-purple-lighter);
+        }
+    }
+
+    &.light-yellow {
+        color: var(--color-yellow);
+        background: #ffffff00;
+        border: 1px solid var(--color-yellow);
+
+        &:hover {
+            background: var(--color-light-yellow);
+        }
+
+        &:active {
+            background: var(--color-light-yellow-lighter);
+        }
+    }
+
+    &.no-border {
+        border: 1px solid #ffffff00;
+    }
+
+    &.group {
+        & button.s {
+            border-inline-width: 0.5px
+        }
+
+        & button.s:first-child {
+            border-inline-start-width: 1px
+        }
+
+        & button.s:last-child {
+            border-inline-end-width: 1px
+        }
+    }
+}

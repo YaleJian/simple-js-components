@@ -47,18 +47,19 @@
 
 /*font-size end*/
 
-:root{
-    --grey-lightest: #f2f2f2;
-    --grey-lighter: #d0d0d0;
-    --grey-light: #c2c2c2;
-    --grey:#969696;
-    --grey-dark:#696969;
-    --grey-darker:#5b5b5b;
-    --grey-darkest:#2b2b2b;
+/*gray start*/
+:root {
+    --gray-lightest: #f2f2f2;
+    --gray-lighter: #d0d0d0;
+    --gray-light: #c2c2c2;
+    --gray: #969696;
+    --gray-dark: #696969;
+    --gray-darker: #5b5b5b;
+    --gray-darkest: #2b2b2b;
     --black: black;
 }
-/*grey start*/
-/*grey start*/
+
+/*gray end*/
 
 /*color start*/
 :root {
@@ -111,13 +112,15 @@
 
 /*radius start*/
 :root {
-    --radius-2: 2px;
-    --radius-4: 4px;
-    --radius-6: 6px;
-    --radius-8: 8px;
-    --radius-10: 10px;
-    --radius-12: 12px;
-    --radius-16: 16px;
+    --radius-circle: 50%;
+    --radius-1: 2px;
+    --radius-2: 4px;
+    --radius-3: 8px;
+    --radius-4: 14px;
+    --radius-5: 20px;
+    --radius-6: 30px;
+    --radius-7: 40px;
+    --radius-8: 60px;
 }
 
 /*radius end*/

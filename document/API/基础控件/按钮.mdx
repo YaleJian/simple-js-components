@@ -9,22 +9,15 @@ if (ExecutionEnvironment.canUseDOM) {
 # 按钮
 按钮作为交互的最基础组件，不合适去个性化封装，更多从无损扩展的角度设计。
 
+## 基础按钮
+一个基础的按钮，只定义背景、边框、圆角，悬停、按下。
 <button className="s">Button</button>
 
 ## 尺寸 size
 ```html
 <button class="s xx-small">xx-small</button>
-<button class="s x-small">x-small</button>
 <button class="s">default</button>
-<button class="s small">small</button>
-<button class="s medium">medium</button>
-<button class="s">large</button>
-<button class="s x-large">x-large</button>
-<button class="s xx-large">xx-large</button>
-<button class="s xxx-large">xxx-large</button>
 ```
-<button className="">xx-small</button>
-<button className="">xx-small</button>
 <button className="s xx-small">xx-small</button>
 <button className="s x-small">x-small</button>
 <button className="s">default</button>
@@ -36,18 +29,11 @@ if (ExecutionEnvironment.canUseDOM) {
 <button className="s xxx-large">xxx-large</button>
 
 ## 颜色 color
-默认按钮为grey类型。
+默认按钮为灰色。
 ```html
-<button class="s grey">grey</button>
-<button class="s black">black</button>
-<button class="s red">red</button>
-<button class="s green">green</button>
-<button class="s blue">green</button>
-<button class="s orange">green</button>
-<button class="s purple">green</button>
-<button class="s yellow">green</button>
+<button class="s gray">gray</button>
 ```
-<button className="s grey">grey</button>
+<button className="s gray">gray</button>
 <button className="s black">black</button>
 <button className="s red">red</button>
 <button className="s green">green</button>
@@ -58,16 +44,9 @@ if (ExecutionEnvironment.canUseDOM) {
 
 ### 浅色
 ```html
-<button class="s light-grey">grey</button>
-<button class="s light-black">black</button>
-<button class="s light-red">red</button>
-<button class="s light-green">green</button>
-<button class="s light-blue">green</button>
-<button class="s light-orange">green</button>
-<button class="s light-purple">green</button>
-<button class="s light-yellow">green</button>
+<button class="s light-gray">gray</button>
 ```
-<button className="s light-grey">grey</button>
+<button className="s light-gray">gray</button>
 <button className="s light-black">black</button>
 <button className="s light-red">red</button>
 <button className="s light-green">green</button>
@@ -78,16 +57,9 @@ if (ExecutionEnvironment.canUseDOM) {
 
 ### 浅色无边框
 ```html
-<button class="s light-grey no-border">grey</button>
-<button class="s light-black no-border">black</button>
-<button class="s light-red no-border">red</button>
-<button class="s light-green no-border">green</button>
-<button class="s light-blue no-border">green</button>
-<button class="s light-orange no-border">green</button>
-<button class="s light-purple no-border">green</button>
-<button class="s light-yellow no-border">green</button>
+<button class="s light-gray no-border">gray</button>
 ```
-<button className="s light-grey no-border">grey</button>
+<button className="s light-gray no-border">gray</button>
 <button className="s light-black no-border">black</button>
 <button className="s light-red no-border">red</button>
 <button className="s light-green no-border">green</button>
@@ -96,14 +68,63 @@ if (ExecutionEnvironment.canUseDOM) {
 <button className="s light-purple no-border">purple</button>
 <button className="s light-yellow no-border">yellow</button>
 
-## 圆角
+## 边角 radius
+
+### 直角
+```html
+<button class="s light-black no-radius">black</button>
+```
+<div>
+    <button className="s gray no-radius">gray</button>
+    <button className="s black no-radius">black</button>
+    <button className="s red no-radius">red</button>
+    <button className="s green no-radius">green</button>
+    <button className="s blue no-radius">blue</button>
+    <button className="s orange no-radius">orange</button>
+    <button className="s purple no-radius">purple</button>
+    <button className="s yellow no-radius">yellow</button>
+</div>
+
+### 圆角
+radius-circle、radius-1~8
+```html
+<button class="s gray radius-circle">gray</button>
+<button class="s black radius-1">b</button>
+```
+<div>
+    <button className="s black radius-1" style={{height: 30, width: 30}}>b</button>
+    <button className="s red radius-2" style={{height: 30, width: 30}}>r</button>
+    <button className="s green radius-3" style={{height: 60, width: 60}}>green</button>
+    <button className="s blue radius-4" style={{height: 60, width: 60}}>blue</button>
+    <button className="s orange radius-5" style={{height: 60, width: 60}}>orange</button>
+    <button className="s gray radius-circle" style={{height: 60, width: 60}}>gray</button>
+</div>
 
 ## 禁用 disabled
-
-# 使用技巧
-## 组合按钮
-
 ```html
 <button class="s" disabled>Button</button>
 ```
 <button className="s" disabled>Button</button>
+<button className="s blue" disabled>Button</button>
+
+## 组合按钮
+```html
+<div class="s group">
+    <button class="s no-radius">上一页</button>
+    <button class="s no-radius">第一页</button>
+    <button class="s no-radius">第二页</button>
+    <button class="s no-radius">下一页</button>
+</div>
+```
+<div class="s group">
+    <button className="s no-radius">上一页</button>
+    <button className="s no-radius">第一页</button>
+    <button className="s no-radius">第二页</button>
+    <button className="s no-radius">下一页</button>
+</div>
+<div class="s group">
+    <button className="s light-red no-radius">上一页</button>
+    <button className="s light-blue no-radius">第一页</button>
+    <button className="s light-purple no-radius">第二页</button>
+    <button className="s light-green no-radius">下一页</button>
+</div>
