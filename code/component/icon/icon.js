@@ -10,9 +10,9 @@ export default class Icon extends Base {
     constructor(fontFace) {
         super();
         const shadowRoot = this.attachShadow({mode: "open"})
-        shadowRoot.innerHTML = `<div class="icon iconfont" part="icon" id="icon">
+        shadowRoot.innerHTML = `<span class="icon iconfont" part="icon" id="icon">
                                     <slot></slot>
-                                </div>`;
+                                </span>`;
         const wrapper = document.createElement('span');
         wrapper.setAttribute('class', 'icon');
         this.element = shadowRoot.getElementById("icon");

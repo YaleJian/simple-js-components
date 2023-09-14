@@ -1,3 +1,6 @@
+body{
+    line-height: 20px;
+}
 /*size start*/
 :root {
     --size-xx-small: 10px;

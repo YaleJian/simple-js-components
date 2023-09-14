@@ -10,32 +10,75 @@
         border-radius: 0
     }
 
-    &.radius-circle{
+    &.radius-circle {
         border-radius: 50%;
     }
-    &.radius-1{
+
+    &.radius-1 {
         border-radius: var(--radius-1);
     }
-    &.radius-2{
+
+    &.radius-2 {
         border-radius: var(--radius-2);
     }
-    &.radius-3{
+
+    &.radius-3 {
         border-radius: var(--radius-3);
     }
-    &.radius-4{
+
+    &.radius-4 {
         border-radius: var(--radius-4);
     }
-    &.radius-5{
+
+    &.radius-5 {
         border-radius: var(--radius-5);
     }
-    &.radius-6{
+
+    &.radius-6 {
         border-radius: var(--radius-6);
     }
-    &.radius-7{
+
+    &.radius-7 {
         border-radius: var(--radius-7);
     }
-    &.radius-8{
+
+    &.radius-8 {
         border-radius: var(--radius-8);
+    }
+
+
+    /*大小*/
+
+    &.xx-small {
+        font-size: xx-small;
+    }
+
+    &.x-small {
+        font-size: x-small;
+    }
+
+    &.small {
+        font-size: small;
+    }
+
+    &.medium {
+        font-size: medium;
+    }
+
+    &.large {
+        font-size: large;
+    }
+
+    &.x-large {
+        font-size: x-large;
+    }
+
+    &.xx-large {
+        font-size: xx-large;
+    }
+
+    &.xxx-large {
+        font-size: xxx-large;
     }
 
     &.black {
@@ -77,12 +120,12 @@
 
         &:hover {
             background: var(--color-green-dark);
-            border: 1px solid var(--color-green);
+            border: 1px solid var(--color-green-dark);
         }
 
         &:active {
             background: var(--color-green-darker);
-            border: 1px solid var(--color-green);
+            border: 1px solid var(--color-green-darker);
         }
     }
 
@@ -267,6 +310,88 @@
 
         & button.s:last-child {
             border-inline-end-width: 1px
+        }
+    }
+
+    /*水波纹*/
+
+    &.waterRipples {
+        position: relative;
+        transition: 0.3s;
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            border-radius: inherit;
+            transition: .4s;
+            /*box-shadow: 0 0 0 8px currentColor;*/
+            outline: 8px solid currentColor;
+        }
+
+        &:active::after {
+            opacity: 1;
+            transition: none;
+            /*box-shadow: none;*/
+            outline: none;
+        }
+
+        &.black::after, &.light-black::after {
+            outline-color: var(--gray-darkest);
+        }
+
+        &.red::after {
+            outline-color: var(--color-red);
+        }
+
+        &.green::after {
+            outline-color: var(--color-green);
+        }
+
+        &.blue::after {
+            outline-color: var(--color-blue);
+        }
+
+        &.orange::after {
+            outline-color: var(--color-orange);
+        }
+
+        &.purple::after {
+            outline-color: var(--color-purple);
+        }
+
+        &.yellow::after {
+            outline-color: var(--color-yellow);
+        }
+    }
+
+    /*光泽*/
+    &.shine {
+        position: relative;
+        overflow: hidden;
+        transition: 0.3s;
+
+        &::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(135deg, transparent, white, transparent);
+            transform: translateX(-100%);
+            transition: 0.6s;
+        }
+
+        &:hover{
+            transform: perspective(500px) rotateY(30deg);
+        }
+        &:hover::before {
+            transform: translateX(100%);
+        }
+        &.shine-egg:hover{
+            transform: perspective(1px) rotateY(30deg);
         }
     }
 }

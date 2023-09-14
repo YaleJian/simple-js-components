@@ -10,8 +10,19 @@ if (ExecutionEnvironment.canUseDOM) {
 按钮作为交互的最基础组件，不合适去个性化封装，更多从无损扩展的角度设计。
 
 ## 基础按钮
-一个基础的按钮，只定义背景、边框、圆角，悬停、按下。
-<button className="s">Button</button>
+1. 至少有以下属性和参考标准：
+- 背景：通常为白色或者透明、暗黑模式下为深灰
+- 边框：通常为1px，灰色
+- 圆角：通常为6px
+- 悬停：通常为变深、变亮
+- 按下：通常为变得更深
+2. 风格化时参考标准
+- 按钮内的元素和当前行文字底部齐平
+- 按钮内的矢量元素例如文字大小应该为1rem
+- 按钮内应该有适当的留白
+
+<span>这是一个</span><button className="s">按钮</button><span>示例。</span>
+<span>This is a </span><button className="s">button</button><span> example。</span>
 
 ## 尺寸 size
 ```html
@@ -20,8 +31,8 @@ if (ExecutionEnvironment.canUseDOM) {
 ```
 <button className="s xx-small">xx-small</button>
 <button className="s x-small">x-small</button>
-<button className="s">default</button>
 <button className="s small">small</button>
+<button className="s">default</button>
 <button className="s medium">medium</button>
 <button className="s large">large</button>
 <button className="s x-large">x-large</button>
@@ -91,13 +102,13 @@ radius-circle、radius-1~8
 <button class="s gray radius-circle">gray</button>
 <button class="s black radius-1">b</button>
 ```
-<div>
-    <button className="s black radius-1" style={{height: 30, width: 30}}>b</button>
-    <button className="s red radius-2" style={{height: 30, width: 30}}>r</button>
-    <button className="s green radius-3" style={{height: 60, width: 60}}>green</button>
-    <button className="s blue radius-4" style={{height: 60, width: 60}}>blue</button>
-    <button className="s orange radius-5" style={{height: 60, width: 60}}>orange</button>
-    <button className="s gray radius-circle" style={{height: 60, width: 60}}>gray</button>
+<div style={{display: 'flex', alignItems: 'center'}}>
+    <button className="s black radius-1" style={{height: 30, width: 60,}}>black</button>
+    <button className="s red radius-2" style={{height: 30, width: 60}}>red</button>
+    <button className="s green radius-3" style={{height: 30, width: 60}}>green</button>
+    <button className="s blue radius-4" style={{height: 30, width: 60}}>blue</button>
+    <button className="s orange radius-5" style={{height: 30, width: 70}}>orange</button>
+    <button className="s gray radius-circle" style={{height: 50, width: 50}}>gray</button>
 </div>
 
 ## 禁用 disabled
@@ -128,3 +139,26 @@ radius-circle、radius-1~8
     <button className="s light-purple no-radius">第二页</button>
     <button className="s light-green no-radius">下一页</button>
 </div>
+
+## 按钮特效
+
+### 点击水波纹
+```html
+<button class="s blue waterRipples">blue</button>
+<button class="s light-blue waterRipples">light-blue</button>
+<button class="s black waterRipples">black</button>
+<button class="s light-black waterRipples">light-black</button>
+```
+<button className="s blue waterRipples">blue</button>
+<button className="s light-blue waterRipples">light-blue</button>
+<button className="s black waterRipples">black</button>
+<button className="s light-black waterRipples">light-black</button>
+
+### 悬停光泽
+```html
+<button class="s xxx-large blue no-radius shine">blue</button>
+```
+<button className="s xxx-large blue no-radius shine">blue</button>
+
+## 彩蛋
+<button className="s xxx-large red no-radius shine shine-egg">不要点我</button>

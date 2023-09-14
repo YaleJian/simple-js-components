@@ -2,6 +2,7 @@ button.s {
     background: white;
     border: 1px solid var(--gray-light);
     border-radius: var(--radius-4);
+    font-size: 1rem;
 
     &:hover {
         background: var(--gray-lightest);
