@@ -1,8 +1,13 @@
 import element from "./../tools/element";
 import icon from "./icon/icon.js";
+import dialog from "../element/dialog/dialog";
+import popup from "../element/popup/popup";
 
 let components = {
-    "icon": icon
+    "icon": icon,
+    "dialog": dialog,
+    "popup": popup
+
 }
 for (let i in components) {
     if (components.hasOwnProperty(i)) {

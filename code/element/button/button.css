@@ -1,6 +1,6 @@
 button.s {
     background: white;
-    border: 1px solid var(--gray-light);
+    border: 1px solid var(--gray);
     border-radius: var(--radius-4);
     font-size: 1rem;
 
@@ -9,6 +9,6 @@ button.s {
     }
 
     &:active {
-        background: var(--gray-light);
+        background: var(--gray-lighter);
     }
 }
