@@ -1,12 +1,10 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
-
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
-if (ExecutionEnvironment.canUseDOM) {
-    require('../../../code/index.js');
-}
 
 # 弹框 Popup
 
-<s-popup><input type="text" placeholder="请选择"/></s-popup>
+<s-popup>
+    <div slot="title">标题名称</div>
+    <div class="content">这是内容</div>
+</s-popup>

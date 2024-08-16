@@ -2,11 +2,6 @@
 sidebar_position: 2
 ---
 
-import CodeBlock from '@theme/CodeBlock';
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
-if (ExecutionEnvironment.canUseDOM) {
-    require('../../../../code/index.js');
-}
 import elementRaw from "!raw-loader!../../../../code/tools/element.js"
 
 # 扩展方法和属性
@@ -92,4 +87,4 @@ toggleDisabled(callback) {
 
 
 ### 源码实现
-<CodeBlock language="jsx">{elementRaw}</CodeBlock>
+<div language="jsx">{elementRaw}</div>

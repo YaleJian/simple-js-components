@@ -1,4 +1,4 @@
-.s {
+.s{
 
     &[disabled] {
         pointer-events: none;
@@ -79,6 +79,10 @@
 
     &.xxx-large {
         font-size: xxx-large;
+    }
+
+    &.shadow{
+        box-shadow: 0 8px 12px #ebedf0;
     }
 
     &.black {

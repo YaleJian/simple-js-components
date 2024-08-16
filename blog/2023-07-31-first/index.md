@@ -4,7 +4,7 @@ title: 初始创立
 authors: [yalejian]
 tags: [Javascript, Simple, Web Component]
 ---
-
+<!-- truncate -->
 ## 历史背景
 
 1. [Web Component](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_components)是原生Web组件的技术。

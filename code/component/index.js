@@ -1,11 +1,11 @@
 import element from "./../tools/element";
 import icon from "./icon/icon.js";
-import dialog from "../element/dialog/dialog";
+import tips from "../element/tips/tips";
 import popup from "../element/popup/popup";
 
 let components = {
     "icon": icon,
-    "dialog": dialog,
+    "tips": tips,
     "popup": popup
 
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@simple-web/",
+  "name": "simple-web",
   "version": "1.0.0-beta.1",
   "description": "Simple Web",
   "main": "index.js",
@@ -37,33 +37,35 @@
     "publish/dist"
   ],
   "dependencies": {
-    "simple-js-tools": "^1.0.0-beta.7",
-    "@docusaurus/core": "2.4.1",
-    "@docusaurus/preset-classic": "2.4.1",
-    "@docusaurus/theme-live-codeblock": "^2.4.1",
-    "@mdx-js/react": "^1.6.22",
-    "clsx": "^1.2.1",
-    "docusaurus-lunr-search": "^2.3.2",
-    "prism-react-renderer": "^1.3.5",
+    "@docusaurus/core": "^3.5.2",
+    "@docusaurus/preset-classic": "^3.5.2",
+    "@docusaurus/theme-live-codeblock": "^3.5.2",
+    "@mdx-js/react": "^3.0.1",
+    "clsx": "^2.1.1",
+    "docusaurus-lunr-search": "^3.4.0",
+    "prism-react-renderer": "^2.3.1",
     "raw-loader": "^4.0.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "simple-js-tools": "^1.0.0-beta.7"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.4.1",
-    "@babel/core": "^7.22.10",
-    "@babel/preset-env": "^7.22.10",
-    "@rollup/plugin-babel": "^6.0.3",
-    "@rollup/plugin-commonjs": "^24.0.3",
-    "@rollup/plugin-json": "^6.0.0",
-    "@rollup/plugin-node-resolve": "^15.1.0",
-    "@rollup/plugin-terser": "^0.4.3",
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@docusaurus/module-type-aliases": "^3.5.2",
+    "@docusaurus/types": "3.5.2",
+    "@rollup/plugin-babel": "^6.0.4",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "classnames": "^2.5.1",
     "cross-env": "^7.0.3",
     "events": "^3.3.0",
-    "rollup": "^3.28.0",
-    "rollup-plugin-copy": "^3.4.0",
-    "rollup-plugin-polyfill-node": "^0.12.0",
-    "ws": "^8.13.0"
+    "rollup": "^4.20.0",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-polyfill-node": "^0.13.0",
+    "ws": "^8.18.0"
   },
   "browserslist": {
     "production": [
@@ -72,12 +74,12 @@
       "not op_mini all"
     ],
     "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
+      "last 3 chrome version",
+      "last 3 firefox version",
+      "last 5 safari version"
     ]
   },
   "engines": {
-    "node": ">=16.14"
+    "node": ">=18.0"
   }
 }
